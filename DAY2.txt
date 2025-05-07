@@ -1,0 +1,251 @@
+STATIC BLOCK AND CONSTRUCTOR
+
+Constructor:- They are nothing but to initialize the objects. For every class there will be a default constructor, whenever we create an object constructor will be called then object
+              will be created. Constructor has class name and method properties
+
+//code for constructor//
+
+public class Q2{
+public static void main(String[]args){
+
+Demo d1 = new Demo();
+Demo d2 = new Demo();
+}
+}
+
+class Demo{
+static {
+System.out.println("Static Block");
+}
+
+Demo(){
+System.out.println("Constructor")
+}
+
+here first the static block is printed once because its a singleaton method, and the Constructor is printed twice because we have created the object 
+
+
+
+
+Static Block:- It will be created using the 'static' keyword. It will call automatically.
+
+//CODE//
+static {
+System.out.println("Static Block");
+}
+
+
+
+Static Method:- for static method no need to call with object it will be called using the classname.methodname, and here static will act as instance or object.
+
+
+
+//CODE for this keyword//
+public class Demo{
+        int age;
+        String name;
+        boolean pass;
+        double marks;
+    
+    void set_Age(int age1){
+        this.age = age1;
+    }
+    void set_Name(String name1){
+        this.name = name1;
+    }
+    void set_status(boolean pass1){
+        this.pass = pass1;
+    }
+    void set_marks(double marks1){
+        this.marks = marks1;
+    }
+    
+    int get_Age(){
+        return age;
+    }
+    String get_Name(){
+        return name;
+    }
+    boolean get_status(){
+        return pass;
+    }
+    double get_marks(){
+        return marks;
+    }
+    
+    public static void main(String[] args){
+    Demo obj1 = new Demo();
+    obj1.set_Age(24);
+    obj1.set_Name("Ajay");
+    obj1.set_status(true);
+    obj1.set_marks(75.11);
+    
+    int result = obj1.get_Age();
+    String result2 = obj1.get_Name();
+    boolean result3 = obj1.get_status();
+    double result4 = obj1.get_marks();
+    System.out.println(result);
+    
+        
+    }
+}
+
+
+
+
+
+
+//CODE for Fibonacci series//-------------Recursion-----------------------
+
+class Demo{
+    public static void main(String[] args){
+        Person obj = new Person();
+        int res = obj.fib(7);
+        System.out.println(res);
+    }
+}
+
+class Person{
+    int fib(int n){
+        if(n<2){
+            return n;
+        }
+        else{
+            return fib(n-1) + fib(n-2);
+        }
+    }
+}
+
+
+//CODE FOR FACtorial//
+
+class Demo{
+    public static void main(String[] args){
+    Person obj = new Person();
+    int res = obj.Fac(5);
+    System.out.println(res);
+}
+}
+
+class Person{
+    int Fac(int n){
+        if(n == 0){
+            return 1;
+        }
+        else{
+            return n*Fac(n-1);
+        }
+       
+        }
+}
+
+
+
+// LCM Finding//
+class Demo{
+    public static void main(String[]args){
+        Person obj = new Person();
+        int res = obj.LCM(20,4);
+        System.out.println(res);
+    }
+}
+
+class Person{
+    int LCM(int a, int b)
+    {
+        int ans =  (a>b) ? a : b;
+        while(true){
+        if(ans % a ==0 && ans % b == 0)
+            break;
+            ans++;
+        }
+        return ans;
+    }
+}
+
+
+//CODE FOR HCF//
+
+class Demo{
+    public static void main(String[]args){
+        Person obj = new Person();
+        int res = obj.HCF(18,12);
+        System.out.println(res);
+    }
+}
+
+class Person{
+    int HCF(int a, int b)
+    {
+       if(b == 0){
+           return a;
+       }
+       else{
+           return HCF(b , a%b);
+       }
+    }
+}
+
+
+------------CONDITIONAL STATEMENT----------------
+
+TYPES: IF-ELSE, ELSE-IF ladder, SWITCH CASE
+
+Conditional Statements are used to check the condition and to print that relevant block in constant time.
+
+
+pseudo code for IF-Else
+if(Condition){
+   statements
+}
+else{
+statement
+}
+
+pseudo code for IF-Else Ladder
+
+if(condition){
+}
+else if(condition){
+}
+
+.
+.
+.
+.
+else{
+}
+
+
+pseudo code for Switch Case
+
+Switch(condition){
+case x:
+code block
+break
+case y:
+code block
+break
+
+default:
+code block
+}
+
+
+----------------Control Statements------------------
+Types: Entry Control Loop, Exit Control Loop
+
+Entry Control: For and While loops
+
+For loop:- for(start;end;increment)
+when we know the range we use for loop
+when we dont know the range we prefer use while loop using the true statement.
+
+example: int[]arr = {1,2,3,4,5,6};
+for(int i = 0; i<n;i++){
+return arr[i];
+}
+
+Exit Control: Do...While
+
+
