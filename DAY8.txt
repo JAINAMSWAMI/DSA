@@ -1,0 +1,104 @@
+-----------------// RECURSIONS //--------------------------------
+
+- Function call itself and itself till it meets base condition. There are two types of recursion i) function calling same function itself and itself till it meets base condition.
+											         ii) Function calling another function itself and itself till it meets base condition.
+
+- If we didn't mention base condition properly we get an exception of stack overflow.
+- Recursions are used to break the code.
+- Question :- Write the code for factorial using recursion.
+- 5! means 5 x 4 x 3 x 2 x 1 x 0
+
+- For every recursive call the elements will be pushed in a stack internally, after reaching base condition elements will be poped.
+- For our questions 5, 4, 3, 2, 1  will be pushed to a stack internally
+
+
+------------------// CODE FOR FACTORIAL OF NUMBER//--------------------------
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       Console.WriteLine(Fact(5));
+    }
+     public static int Fact(int n){
+            if(n == 0){
+                return 1;
+            }
+            else{
+            return n * Fact(n-1);
+            }
+        }
+}
+
+
+
+
+-------------------------// CODE FOR FIBONACCI SERIES//-----------------------------
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine(Fibonacci(2));
+    }
+    
+    public static int Fibonacci(int n){
+        if(n == 1 || n == 0){
+            return 1;
+        }
+        return Fibonacci(n-1) + Fibonacci(n-2);
+    }
+}
+
+
+
+
+
+
+---------------------// PASS BY VALUE AND PASS BY REFERENCE//--------------------------
+
+- In java we don't have pointers so we can't use references, so java has pass by value
+
+- Question:- Reverse an Array using two pointers.
+
+
+
+
+-------------------// REVERSE AN ARRAY USING POINTERS//-----------------------
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = {1,2,3,4,5,6};
+        int i = 0;
+        int j = arr.Length-1;
+        
+        while(i<=j){
+          if(arr[i] == arr[j]){
+              i++;
+              j--;
+          }
+          else{
+              int temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+              i++;
+              j--;
+          }
+            }
+        foreach(int num in arr){
+            Console.WriteLine(num);
+        }
+        
+    }
+}

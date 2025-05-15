@@ -1,0 +1,163 @@
+// TWO DIMENSIONAL ARRAY//
+
+- 2-Dimensional arrays consist of rows and columns.
+
+//SYNTAX//
+int[][] arr = new int[3][2];  1st bracket represents rows and second bracket represents columns.
+
+- while declaring the array we have to declare number of rows, and column number is optional.
+- Each row will act as a individual array
+- so here the length of array is row number just say row number is the length of array.
+
+
+ arr[5] = {1,2,3,4};
+
+so here the size of array is 5 because the declared size is 5 but the length of array is 4 because the array consist of only 4 elements.
+
+
+----------------// Find a target in Array (LINEAR SEARCH) //---------------------
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,7,9,8,74,5};
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a target to find: ");
+        int target = sc.nextInt();
+        boolean found = false;
+        for(int i = 0; i<arr.length;i++){
+            if(arr[i] == target){
+                System.out.println("target found at index: " + i);
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+                System.out.println("Not Found");
+            }
+    }
+}
+
+
+
+
+-------------------// CHECK WHETHER THE ARRAY IS SORTED OR NOT//-----------------------
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+       int[] arr = {1,2,4,5,7,9,6,2,2,1,5};
+       System.out.println(checkSorted(arr));
+    }
+    
+    public static String checkSorted(int[]arr){
+        for(int i = 1; i<arr.length-1; i++){
+            if(arr[i] > arr[i+1]){
+                return "Unsorted";
+            }
+       }
+       return "Sorted";
+    }
+}
+
+
+-------------------// SWAP 2 NUMBERS WITHOUR USING THIRD VARIABLE //---------------------------
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+       int a = 5;
+       int b = 10;
+       System.out.println("value of A before swap: "+a);
+       System.out.println("value of B before swap: "+b);
+       
+        a = a + b;
+        //a is now 15
+        
+        b = a - b;
+         //now b is 15 - 10 = 5
+         
+        a = a - b;
+         //now a is 15 - 5 = 10
+        
+        System.out.println("value of A after swap: "+a);
+       System.out.println("value of B after swap: "+b);
+       
+       
+    }
+}
+
+
+
+
+
+--------------------------// FIND THE MISSING ELEMENT IN AN SORTED ARRAY//-----------------------------------
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = {1,2,3,4,5,7,8,9};
+        int n = arr.Length + 1;                  // 4 + 1 = 5 because the element is there in the array so +1
+	int expectedSum = n * (n + 1) / 2;       // 5 * 6 / 2 = 15
+	int actualSum = 0;
+
+        
+        foreach(int num in arr){             
+            actualSum += num;         1st pass : actualSum = 0 +1 = 1     2nd Pass: actualSum = 1+2 = 3      3rd pass: actualSum = 3+2 = 5;     4th pass: 5+3 = 8.........
+        }
+        int res = expectedSum-actualSum;     // Expeccted sum = total sum of array = 39 and actualSum = total sum without missing element = 39 - 33 = 6.
+        Console.WriteLine(res);
+    }
+}
+
+
+
+
+
+
+-----------------------// SHIFT ALL 0s TO THE LEFT AND 1s TO THE RIGHT//---------------------------------
+
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = {0,1,0,1,0,1,0};
+        int left = 0;
+        int right = arr.Length-1;
+        
+        while(left < right);{
+            while(arr[left] == 0 && left < right){
+                left++;
+            }
+            while(arr[right] == 1 && left < right){
+                right--;
+            }
+        }
+        
+        while(left<right){
+            int temp = arr[left]; 
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+        Console.WriteLine("Rearranged array: " + string.Join(", ", arr));
+    }
+}

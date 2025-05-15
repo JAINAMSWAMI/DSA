@@ -1,0 +1,163 @@
+SWITCH CASE: cases have to be the same type as expression, must be a constant or literal
+            -duplicate case values are not allowed
+            -break is use to terminate the sequence
+            -if break is not used, it will continue to next case
+            -default will execute when none of the above case satisfies
+	    -if default is not at the end, put break after it
+
+
+
+
+//Code for Switch case//
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the number to get the day: ");
+        Scanner sc = new Scanner(System.in);
+        int day = sc.nextInt();
+        switch(day){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+             case 4:
+                System.out.println("Thursday");
+                break;
+             case 5:
+                System.out.println("Friday");
+                break;
+             case 6:
+                System.out.println("Saturday");
+                break;
+             case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Enter a correct day!!");
+                break;
+        }
+        
+    }
+}
+
+//Enhanced Switch Case//
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.print("Enter the number to get the day: ");
+        Scanner sc = new Scanner(System.in);
+        int day = sc.nextInt();
+        switch(day){
+            case 1 -> System.out.println("Monday");
+            case 2 -> System.out.println("Tuesday");
+            case 3 -> System.out.println("Wednesday");
+            case 4 -> System.out.println("Thursday");
+             case 5 -> System.out.println("Friday");
+             case 6 -> System.out.println("Saturday");
+             case 7 -> System.out.println("Sunday");
+            default -> System.out.println("Enter a correct day!!");
+                
+        }
+        
+    }
+}
+
+
+-----//Ternary Operator//-------------
+--------//Enchanced IF-ELSE using ternary operator//--------------
+
+class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println((n==5) ? "Yes" : "No");
+    }
+}
+
+//To find even and odd in an array//
+
+class Main {
+    public static void main(String[] args) {
+       int[]arr = {10,20,45,65,30,45,85};
+       for(int i = 0; i<arr.length;i++){
+           if(arr[i] % 2 == 0){
+               System.out.println("Even no: " + arr[i]);
+           }
+           else{
+               System.out.println("Odd");
+           }
+       }
+    }
+}
+
+
+
+
+-----------// Enhanced FOR LOOP//----------------
+In collections we don't have index values in those situations we have to use foreach loop
+
+-----------//code for Enchanced FOR LOOP//---------------
+
+class Main {
+    public static void main(String[] args) {
+       int[] arr = {1,2,3,4,5};
+       for(var i  : arr){
+           System.out.println(i);
+       }
+    }
+}
+
+
+--------// CODE TO SUM OF ALL DIGITS IN AN ARRAY AND ADDING THE RESULT IF THE RESULT IS IN SINGLE DIGIT PRINT TRUE ELSE FALSE//------
+
+EX:- 1,2,3,4,5 here sum = 15 and adding the sum like 1 + 5 = 6 <=9 which is last single digit so true.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] numbers = { 1, 2, 3, 4, 5, 45,77,85,589,6558,5};
+        int sumN = numbers.Sum();
+        while(true){
+            int units = sumN % 10;
+            int tens = (sumN / 10) % 10;
+            int sumUT = units + tens;
+            if(sumUT <= 9){
+                Console.WriteLine("True");
+                break;
+            }
+            else{
+                Console.WriteLine("False");
+                break;
+            }
+        }
+    }
+}
+
+
+--------------------//ADDING NUMBERS OF ARRAY USING LOOP//----------------
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = {1,2,3,4,5};
+        int sum = 0;
+        for(int i = 0; i<arr.Length;i++){
+            sum += arr[i];
+        }
+        Console.WriteLine(sum);
+    }
+}
