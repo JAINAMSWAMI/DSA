@@ -1,0 +1,49 @@
+------------------------// DIFFERENCES IN SUB-ARRAY, SUBSET, SUBSEQUENCE, SUBSTRING //-----------------------------
+
+SUB-ARRAY:- It are the elements from a given array and we have to take sub arrays from that main array. Sub-Arrays are continuous allocation from the main array like main array is [1,2,3] so sub-arrays are -> [1,2], [2,3] so here we can't write [2,1] because it violates the array properties.
+
+SUBSET:- A subset is a collection of elements from the original array, where the order of the elements doesn't matter and the elements don't need to be consequetive.
+
+SUBSEQUENCE:- A substring is a continuous, consecutive sequence of characters within a larger string.
+
+SUBSTRING:- It is not continuous "abc" can be written as in substrings are "ab", "bc", "ac". In this the order should be maintained we cannot write "ca".
+
+
+---------------------// Sliding Window Approach //---------------------------
+- Initialize L and R pointer at 0th index.
+- Create a HashSet.
+- Check R's character in the set if we don't have push the R's character into the set and increase R.
+- If we have R's character in the set remove R's character and move L
+- Find the Length R-L+1, and all time update max.
+
+
+
+-----------------------// GREEDY ALGORITHM //--------------------------------
+
+Types of Problems in Greedy Approach
+
+i) N - Meetings in a room.
+ii) 0/1 KnapSack Problem.
+iii) Job Scheduling.
+
+
+
+------------ N MEETINGS IN  A ROOM USING GREEDY APPROACH----------------------
+
+step 1:- startTime = {1,3,0,5,8,5}  endTime = {2,4,5,7,9,9}
+step 2:- make states of endTime and startTime like this [(1,2),(3,4),(0,5),(5,7),(8,9),(5,7)]
+step 3:- Do custom sorting with Comparator and sort with end time.
+step 4:- If EndTime of current meeting < Start time of next meeting--> Consider the meeting and increase the counter.
+step 5:- If EndTime of current meeting is > Start time of next meeting--> Don't Consider the meeting skip.
+
+
+
+
+------------0/1 FRACTIONAL KNAPSACK USING GREEDY APPROACH --------------------
+
+step 1:- Values[] = {100,60,120}  Weights[] = {20,10,30} Capacity = 50
+step 2:- Make States of the given data in format like (Values, weights, per kg weight) like this (60, 10, 2). to get per kg weight use values / weights.
+
+step 3:- Custom sort it using the per kg Weight.
+step 4:- take the first state because it's the maximum value in the states. After taking the state substract the weight from total capacity and adds the total values to a variable.
+step 4:- If the last capacity is left 10 and the weight is 20 you can just take 10 from 20 so multiply per weight kg and left capacity like 4 * 10 = 40. So you get that fractional values from the total values.n

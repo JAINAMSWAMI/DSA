@@ -1,0 +1,7 @@
+- If a method is incomplete, incomplete in the sense method contains 3 statements decleartion, definition, and calling, If defination is missing it means method is incomplete. For all incomplete methods we have to mention abstract keyword to say that its incomplete method.
+
+- If a class contains abstract methods then you have to make the class abstract.
+
+- If we want to use abstract methods we have to extend that abstract class to child class, In child class we have to define that abstract method and creating object for that child class then we can call that abstract method.
+
+-Interface contains only abstract methods

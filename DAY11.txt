@@ -1,0 +1,74 @@
+-------------------------// DUTCH FLAG ALGORITHM //-------------------------------
+
+- Initialize three pointers:- L at 0th index, M also at 0th index, and H at array length-1.
+- The elements between M and H are unsorted and we have to traverse from M to H if arr[m] = 0 then between arr[m] and arr[l] and increase m and l.
+
+- if arr[m] == 1 just increase m. else decrease h--;
+
+----------------// CODE FOR DUTCH FLAG ALGO WHERE WE HAVE TO SORT 0s, 1s and 2s. //--------------------------------
+
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[]arr = {0,1,2,1,0,1,2,0,1};
+       int m = arr[0];
+       int l = arr[0];
+       int h = arr.Length-1;
+       
+       while(m<=h){
+           if(arr[m] == 0){
+               int temp = arr[m];
+               arr[m] = arr[l];
+               arr[l] = temp;
+               l++;
+               m++;
+           }
+           else if(arr[m] == 1){
+               m++;
+           }
+           else{
+               int temp2 = arr[m];
+               arr[m] = arr[h];
+               arr[h] = temp2;
+               h--;
+           }
+       }
+       foreach(int num in arr){
+           Console.WriteLine(num);
+       }
+    }
+}
+
+
+-----------------------// COLLECTIONS FRAMEWORKS //---------------------------------
+
+
+					Collections Framework
+						|
+						|
+		--------------------------------------------------------------------
+		|					|			   |
+		|					|			   |
+	       LIST				       SET                        MAP
+		|					|			   |
+	   i)ArrayList				    i)HashSet			i)HashMap
+          ii)LinkedList				    ii)LinkedHashSet		ii)LinkedHashMap
+	  iii)VECTOR				    iii)TreeSet			iii)TreeMap
+
+
+
+- LIST, SET and MAP these are interfaces rest are classes. Interface contains incomplete methods and class contains complete methods.
+- List is ordered which can allow duplicates, Set is unordered and won't accept duplicates. Maps contains key-value pairs.
+
+
+
+
+
+

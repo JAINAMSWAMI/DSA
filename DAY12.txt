@@ -1,0 +1,58 @@
+----------------------------// Majority Element different approach // ---------------------------------
+
+From the given array assume that starting index is my majority element from that target element compare the rest elements if we got same value increase the count if you get different value then decrease. if counter becomes 0 means till not we haven't seen ant majority element again select the new target element the very next element is my target element. At the end of for loop if counter is more than 0 it means that there is a majority element. Taking that target value count how many times that the element repeated in the array. if counter > n/2 it my majority element.
+
+
+---------------------// Longest Consequetive Elements //----------------------------------------------
+- Create a HashSet, Run a loop take the value from array and push the values to the HashSet.
+- Now start iterating HashSet Values we have to find whether the element is starting or not by deacreasing the value from current value and checking that value using contains method in the set
+
+- If we got starting value then start comparing with arr[i] +1 == arr[j].
+
+
+
+
+--------------------------// LONGEST CONSEQUETIVE SEQUENCE //------------------------------------
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = {1, 2, 101, 3, 102, 4, 103};
+        HashSet<int> nums = new HashSet<int>(arr);
+        int longest = 0;
+        List<int> longestSeq = new List<int>();
+
+        foreach (int num in nums)
+        {
+            // Only try to build sequence from the beginning of a streak
+            if (!nums.Contains(num - 1))
+            {
+                int currentNum = num;
+                List<int> currentSeq = new List<int>();
+
+                while (nums.Contains(currentNum))
+                {
+                    currentSeq.Add(currentNum);
+                    currentNum++;
+                }
+
+                if (currentSeq.Count > longest)
+                {
+                    longest = currentSeq.Count;
+                    longestSeq = currentSeq;
+                }
+            }
+        }
+
+        Console.WriteLine("Longest Consecutive Sequence:");
+        foreach (int n in longestSeq)
+        {
+            Console.Write(n + " ");
+        }
+        Console.WriteLine("\nLength: " + longest);
+    }
+}

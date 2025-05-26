@@ -1,0 +1,12 @@
+--------------------------// RECURSIONS //------------------------------
+
+- From a given string skip a entire word and print rest of the character.
+- From the given string you have to skip 'he' if not print hello.
+
+
+-------------------// TWO POINTER APPROACH //---------------------------
+
+Step 1:- Initialize the pointers according to the pointers.
+Step 2:- If you are starting first pointer at 0th index and second pointer at last index, Whenever both pointers crosses each other break the loop, in between do the revelant operation.
+
+Question:- Reverse an Array.

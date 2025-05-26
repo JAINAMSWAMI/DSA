@@ -1,0 +1,79 @@
+------------------------------// MAXIMUM PRODUCT OF SUBARRAY ELEMENTS //--------------------------------
+
+int[]arr = {2,3,-6,4};
+
+- You have to find the product(*) of the array and start the product variable with 1 because anything multiplied with 0 is 0, so start          variable with 10;
+
+- In the subarray if we have even positive numbers then the product will be positive.
+- If we have Odd negative numbers the product will be negative.
+- In the subarray we have atleast 1 zero start you product variable with 1
+- if we have negative value the product of previous elements before negative element will be positive and the elements after that negative element the product is also positive.
+
+- Initialize the maximum variable with extreme negative like this int max = int.MinValue;
+
+
+LEETCODE QUESTIONS TO SOLVE.
+
+Q-No:- 88
+Q-No:- 4
+Q-No:- 15
+Q-No:- 229
+Q-No:- 56
+Q-No:- 875
+Q-No:- 1358
+Q-No:- 424
+Q-No:- 162
+Q-No:- 101
+
+
+
+
+
+--------------------------// KOKO EATING BANANAS //-------------------------------
+
+- What ever the maximum value you have you have to check that many elements.
+- Run loop from 0 to Max.
+- Initialize left pointer with 0, Initialize right pointer at Max.
+- Get the mid value, then divide array elements.
+- get the ceil values of the division.
+- Add all those ceil values and compare with the given target hours if it is less than or equals to eliminate right half, and change the right pointer mid - 1.
+- If the sum is greater than to the target hours eliminate left half, change left to mid + 1.
+- Return arr[left].
+
+
+
+
+
+----------------------------- // OBJECT ORIENTED PROGRAMMING //---------------------
+
+					Pillars of OOPS
+						|
+						|
+			_________________________________________________________
+			|			|		|		|
+			|			|		|		|
+		    INHERITANCE		POLYMORPHISM        ABSTRACTION    ENCAPSULATION
+
+
+- CLASS:- It is a virtual entity and is a blueprint for objects where all the methods objects are defined.
+- OBJECT:- Instance of class.In Object we can call the methods which were present in the particular class by creating the object for the 	   particular class.
+- CONSTRUCTOR :- Initializing the object. 2 types:- Default and parameterized constructor, for every class there will be a default    			 constructor. Constructor having some parameters like variables etc is known as parameterized constructor.
+
+- INHERITANCE:- 4 TYPES -> Single Innheritance :- The properties are In-herited to child class to parent class.
+			   Multi-Level Inheritance :- Properties are In-herited to parent class from grand-child class and properties are 						     In-herited to child class from parent class.
+			   Multiple Inheritance :- Properties are In-herited from multiple parent classes
+			   Hiearchical Inheritance :-Properties are In-herited to multiple child classes from a single parent class.4
+-Using extend keyword we can inherit properties from classes.
+-Using Implement keyword we can inherit properties from interfaces.
+
+- POLYMORPHISM:- Same method appearing multiple times but the parameters are different. Main method can be overridden with different 			 parameters.
+                 2 TYPES-> Method Overloading:- In same class if we have multiple methods with same name with different parameters we call 						it as a Method Overloading. 
+			   Method Overriding:- In Child class if we declare a method which were present in parent class with same method 					       name and same parameters we call it as a method overriding.
+
+
+- ENCAPSULATION :- Binding method and data and showing only relevant data is called encapsulation. If the variables are private we can't access outside the class if we want to access we can access using methods.
+
+
+- ABSTRACTION:- Hiding implementation showing only essential details. 2 Types:- Data Abstraction, Functional Abstraction, Procedural Abstraction, Control Abstraction. If we want to make a method Abstract we use abstract keyword and if we have abstract method we have to make the class abstract. Abstract method is a incomplete method.
+
+INTERFACE:- It contains only abstract methods, we can't create object for interface

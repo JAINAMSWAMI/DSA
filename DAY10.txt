@@ -1,0 +1,38 @@
+---------------------------// STRINGS //------------------------------
+
+- Strings are classes and array are objects. The sequence of characters is called strings, So strings are immutable, All the array objects are created in heap memory but strings are created inside heap memory in string pool. 
+- Once a string got created it will be created permantely, it means we can't modify the string.
+
+
+- when you write:- string a = "HELLO";
+			  b = "HELLO";   So here the HELLO is stored in heap memory and both a and b are pointing a single HELLO like this a -> HELLO
+     b ->^       So when we write that a == b then it return true. This '==' is used to compare address of the word HELLO.
+
+
+And when we write this:- String a = new String("HELLO");
+ 			 String b = new String("HELLO"); so this creates a new object in heap memory with different address for both strings. And when you write (a == b) return false because both have different address.
+
+
+- When you write (a.equals(b)); then this compares data stored in the address so it return true for every equal string.
+
+- To get the length of string use string.Length() function to get the number of characters in the string.
+
+
+- When you try to reverse the array it is mutable so the reversal happens but with string it is not same strigs are immutable so when we use the same reversal code for strings it won't reverse the string
+
+
+
+
+
+------------------------// SUBSETS //----------------------------
+
+- For a given array we have to print the possible arrays consisting of the array elements in a sequence but not continuous is called subset. In an array if we have n number of elements will get 2^n subsets.
+
+example:- arr =[1,2,3] --> subsets --> [],[1],[2],[3],[1,2],[1,2],[2,3],[1,3],[1,2,3]; 
+
+
+
+-----------------------// BACKTRACKING //-------------------------
+
+- It is an example of recursion
+- In recursion we have only two possibilities either if or else and in backtracking we have multiple possibilities, most of the problems whenever we reach base case we have to print all the base case elements and remove last element in last recursive call then its backtracking.

@@ -1,0 +1,171 @@
+----------------------------// Lower bound in Array //---------------------------------
+
+LOWER BOUND :- The first place in a sorted array where the value is equal to or greater than the given number.
+
+Example (array: {1, 3, 5, 6, 6, 7, 7, 7, 9}):
+Lower bound of 7 → index 5 (first 7)
+
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[]arr = {1,3,5,6,6,7,7,7,9};
+       Console.Write("Enter a target element to find Lower bound: ");
+       int target = Convert.ToInt32(Console.ReadLine());
+       int left = 0;
+       int right = arr.Length-1;
+        while(left < right){
+            int mid = left + (right - left) / 2;
+            if(arr[mid] < target){
+                left = mid  +1;
+            }
+            else{
+                right = mid;
+            }
+        }
+        Console.WriteLine(left);
+       
+    }
+}
+
+
+
+-----------------------------// UPPER BOUND //---------------------------------
+
+UPPER BOUND :- The first place in a sorted array where the value is greater than the given number.
+
+Example (array: {1, 3, 5, 6, 6, 7, 7, 7, 9}):
+Upper bound of 7 → index 8 (first 9)
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[]arr = {1,3,5,6,6,7,7,7,9};
+       Console.Write("Enter a target element to find Upper bound: ");
+       int target = Convert.ToInt32(Console.ReadLine());
+       int left = 0;
+       int right = arr.Length-1;
+        while(left < right){
+            int mid = left + (right - left) / 2;
+            if(arr[mid] <= target){
+                left = mid  +1;
+            }
+            else{
+                right = mid;
+            }
+        }
+        Console.WriteLine(left);
+       
+    }
+}
+
+
+
+---------------------// FIND LAST OCCURENCE OF THE ELEMENT using binary seach//----------------------------
+
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[]arr = {1,3,5,6,6,7,7,7,9};
+       Console.Write("Enter a target element to find Upper bound: ");
+       int target = Convert.ToInt32(Console.ReadLine());
+       int left = 0;
+       int right = arr.Length-1;
+        while(left < right){
+            int mid = left + (right - left) / 2;
+            if(arr[mid] <= target){
+                left = mid  +1;
+            }
+            else{
+                right = mid;
+            }
+        }
+        Console.WriteLine(left-1);
+       
+    }
+}
+
+
+
+
+------------------------// FIND MINIMUM ELEMENT IN ROTATED ARRAY //-----------------------
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[]arr = {7,6,1,2,3,4,5};
+        int left = 0, right = arr.Length-1;
+        while(left< right){
+            int mid = left+ (right - left) / 2;
+             if(arr[mid] > arr[right]){
+                 left = mid + 1;
+             }
+             else{
+              right = mid;   
+             }
+        }
+        Console.WriteLine(arr[right]);
+        
+    }
+}
+
+
+
+
+
+
+-------------------------------// PREFIX SUM //---------------------------------
+
+arr = [3, 1, 4, 2, 5]
+
+Prefix sum is-> P = [3, 4, 8, 10, 15]
+
+P[0] = 3
+
+P[1] = 3 + 1 = 4
+
+P[2] = 3 + 1 + 4 = 8
+
+P[3] = 3 + 1 + 4 + 2 = 10
+
+P[4] = 3 + 1 + 4 + 2 + 5 = 15
+
+
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[]arr = {2,3,5,7,9};
+       List<int> nums = new List<int>();
+       nums.Add(arr[0]);
+       for(int i = 1; i<arr.Length;i++){
+           arr[i] = arr[i-1] + arr[i];
+           nums.Add(arr[i]);
+       }
+       nums.ToArray();
+       foreach(int num in nums){
+           Console.WriteLine(num);
+       }
+       
+    }
+}
